@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacto</title>
+	<!-- font awesome -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+	<!-- boostrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+
+
+<body>
+    
+ <div class="layout d-flex flex-column" id="app">
+	
+	<main class="flex-grow-1">
+
+		<section class="contact" id="contact">
+			<div class="contacto-container">
+				<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3361.217487839103!2d-58.403770324173!3d-34.59801527295637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0x6a1cd58fa7e6383d!2sParaguay%202334%205%20f%2C%20C1121ABL%20CABA!5e1!3m2!1ses-419!2sar!4v1695393459140!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+			<form action="">
+				
+				<h3 class="ctac-titulo">Ponerse en contacto</h3>
+				<div class="inputBox">
+					<span class="fas fa-user"></span>
+					<input type="text" v-model="nombre" placeholder="nombre">
+				</div>
+
+
+				<div class="inputBox">
+					<span class="fas fa-envelope"></span>
+					<input type="email" v-model="mail"  placeholder="email">
+
+				</div>
+
+
+				<div class="inputBox">
+					<span class="fas fa-phone"></span>
+					<input type="number" v-model="numero" placeholder="numero">
+
+				</div>
+
+				<div class="inputBox">	
+					<span class="fa-solid fa-paw"></span>
+					<input type="text" v-model="mascota" placeholder="que mascota tiene">
+
+				</div>
+
+				<div class="inputBox">
+
+					<textarea type="text"  placeholder="number" class="ctextarea"></textarea>
+
+				</div>
+
+				<input type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" value="contactanos ahora">
+
+
+  
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+			<p>{{nombre}}</p>
+			</div>
+			<div class="modal-footer">
+			<!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+			<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salir</button>
+			</div>
+		</div>
+		</div>
+	</div>
+  <!-- Modal -->
+ 
+			</form>
+			</div>
+		</section>
+
+		<section class="contac-info">
+
+			<img src="./assets/contacto_gato.png" class="info-gato"  alt="gato">
+
+			<div class="info-local flex-grow-0" >
+				<h5><i class="fa-solid fa-location-dot"></i> Paraguay 2334 5 F </h5>
+				<h5><i class="fa-regular fa-clock"></i> Lunes a Sábado de 9 a 20hs</h5>
+				<h5><i class="fas fa-phone"></i><a href="tel:+54 9 362 553-2464"> +54 9 362 553-2464 </a></h5>
+				<h5><i class="fas fa-envelope"></i><a href="mailto:david.pet-shop@gmail.com"> david.pet-shop@gmail.com </a></h5>
+			</div>
+		</section>
+
+	</main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./assets/"></script>
+
+</body>
+</html>
