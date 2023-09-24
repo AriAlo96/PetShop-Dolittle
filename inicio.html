@@ -47,18 +47,52 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success btn-index" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
+            <button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg></button>
         </nav>
-
+        <div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Su carrito!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <table class="table table-hover table-borderless tabla-carrito">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2"></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                  </table>
+            </div>
+        </div>
     </header>
     <main>
-        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
-            style="height: 20rem;">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./assets/images/Banner1.png" class="d-block w-100 img-banner" alt="">
@@ -81,12 +115,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="contenedor-presentacion" style="display: flex; align-items: center; margin: 1rem;">
+        <div  style="display: flex; align-items: center; margin: 1rem;">
             <div class="card mb-3" style="max-width: 800px; margin: 1rem;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="./assets/images/Amigos-mascotas.jpg" class="img-fluid rounded-start" alt="..."
-                            style="height: 13rem; width: 17rem; object-fit: cover;">
+                            style= "width: 100%; object-fit: cover;">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -121,8 +155,10 @@
                 <img src="./assets/images/Tips dolittle.png" class="card-img-top"
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">Cómo acostumbrar a tu perro a quedarse solo en casa</h4>
+                <div style="display: flex; justify-content: center;">
                 <img src="./assets/images/Dejar-al-perro-solo-en-casa.jpg"
-                    style="height: 15rem; width: 38rem; object-fit: cover;" />
+                    style="width: 90%; height: 15rem; object-fit: cover;" />
+                </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -157,26 +193,36 @@
                 <img src="./assets/images/Tips dolittle.png" class="card-img-top"
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">Cómo elegir el mejor comedero para mi perro</h4>
-                <img src="./assets/images/perros-comiendo.jpg"
-                    style="height: 15rem; width: 38rem; object-fit: cover;" />
+                <div style="display: flex; justify-content: center;">
+                    <img src="./assets/images/perros-comiendo.jpg"
+                        style="width: 90%; height: 15rem; object-fit: cover;" />
+                    </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Talla y hocico del perro</div>
-                                <p>El tamaño y la forma del comedero deben adaptarse a su tamaño y morfología. Observarlo mientras come y ajustar el comedero según sus necesidades específicas es una excelente manera de asegurarte de que esté bien atendido durante las comidas.</p>
+                                <p>El tamaño y la forma del comedero deben adaptarse a su tamaño y morfología.
+                                    Observarlo mientras come y ajustar el comedero según sus necesidades específicas es
+                                    una excelente manera de asegurarte de que esté bien atendido durante las comidas.
+                                </p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Características del comedero</div>
-                                <p>Es muy importante que el comedero disponga de base antideslizante para evitar que se desplace mientras tu amigo come. Si tu perro come con mucha ansiedad, lo ideal es que el bebedero y el comedero estén separados. De esta forma, evitaremos que la comida y el agua se mezclen.</p>
+                                <p>Es muy importante que el comedero disponga de base antideslizante para evitar que se
+                                    desplace mientras tu amigo come. Si tu perro come con mucha ansiedad, lo ideal es
+                                    que el bebedero y el comedero estén separados. De esta forma, evitaremos que la
+                                    comida y el agua se mezclen.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Te contamos cuál es el material ideal para su comedero</div>
-                                <p>Sin duda, los comederos de acero inoxidable son la mejor opción. Presentan una alta resistencia a la corrosión y no desprenden elementos tóxicos. La mayor parte de ellos cuentan con una base antideslizante para evitar derramamientos. </p>
+                                <p>Sin duda, los comederos de acero inoxidable son la mejor opción. Presentan una alta
+                                    resistencia a la corrosión y no desprenden elementos tóxicos. La mayor parte de
+                                    ellos cuentan con una base antideslizante para evitar derramamientos. </p>
                             </div>
                         </li>
                     </ul>
@@ -189,28 +235,36 @@
                 <img src="./assets/images/Tips dolittle.png" class="card-img-top"
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">Cuáles son las frutas que puede comer tu perro</h4>
-                <img src="./assets/images/perro-fruta.jpeg"
-                    style="height: 15rem; width: 38rem; object-fit: cover;" />
+                <div style="display: flex; justify-content: center;">
+                    <img src="./assets/images/perro-fruta.jpeg"
+                        style="width: 90%; height: 15rem; object-fit: cover;" />
+                    </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Frutas que pueden comer y les aportan beneficios a su salud</div>
-                                <p>Plátano, fresas, manzana,naranja, mandarina, kiwi,sandía, mango,pera, papaya, nísperos, son algunas de las frutas que tu perro puede comer sin problemas! La maypría de ellas le aportaran vitamina A, B, C, E, fibras y potasio.  </p>
+                                <p>Plátano, fresas, manzana,naranja, mandarina, kiwi,sandía, mango,pera, papaya,
+                                    nísperos, son algunas de las frutas que tu perro puede comer sin problemas! La
+                                    maypría de ellas le aportaran vitamina A, B, C, E, fibras y potasio. </p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Sé cuidadoso</div>
-                                <p> Siempre debes quitar las semillas, los huesos y el corazón de la fruta, pues son perjudiciales para su salud; en algunas también debes eliminar la cáscara, como en el plátano, el kiwi, la naranja, el melón y la sandía.</p>
+                                <p> Siempre debes quitar las semillas, los huesos y el corazón de la fruta, pues son
+                                    perjudiciales para su salud; en algunas también debes eliminar la cáscara, como en
+                                    el plátano, el kiwi, la naranja, el melón y la sandía.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Frutas que no deben comer</div>
-                                <p>Las uvas: no solo son difíciles de digerir, sino que pueden afectar negativamente a sus riñones. 
+                                <p>Las uvas: no solo son difíciles de digerir, sino que pueden afectar negativamente a
+                                    sus riñones.
                                     Las grosellas: son tóxicas y pueden provocar fallo renal.
-                                    Aguacate: tampoco lo digieren bien. Contiene una sustancia llamada persina que es tóxica para perros, gatos, caballos y algunos pájaros. </p>
+                                    Aguacate: tampoco lo digieren bien. Contiene una sustancia llamada persina que es
+                                    tóxica para perros, gatos, caballos y algunos pájaros. </p>
                             </div>
                         </li>
                     </ul>
@@ -223,26 +277,34 @@
                 <img src="./assets/images/Tips dolittle.png" class="card-img-top"
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">¿Por qué ronronean los gatos?</h4>
-                <img src="./assets/images/gato-ronroneando.jpeg"
-                    style="height: 15rem; width: 38rem; object-fit: cover;" />
+                <div style="display: flex; justify-content: center;">
+                    <img src="./assets/images/gato-ronroneando.jpeg"
+                        style="width: 90%; height: 15rem; object-fit: cover;" />
+                    </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Qué es el ronroneo</div>
-                                <p>Es un sonido que desarrollan los gatos des de bebés para comunicarse con sus madres y es un sonido que mantendrán a lo largo de toda su vida. Se trata de una forma de comunicación que se da con la boca cerrada.</p>
+                                <p>Es un sonido que desarrollan los gatos des de bebés para comunicarse con sus madres y
+                                    es un sonido que mantendrán a lo largo de toda su vida. Se trata de una forma de
+                                    comunicación que se da con la boca cerrada.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Cómo se produce el ronroneo</div>
-                                <p>Aunque hay bastantes estudios que apuntan a que se produce mediante una vibración que ellos inducen sobre sus cuerdas vocales, también prevalece la teoría de que tiene que ver con la contracción de la laringe. Así pues, este mágico sonido, sigue siendo un misterio.</p>
+                                <p>Aunque hay bastantes estudios que apuntan a que se produce mediante una vibración que
+                                    ellos inducen sobre sus cuerdas vocales, también prevalece la teoría de que tiene
+                                    que ver con la contracción de la laringe. Así pues, este mágico sonido, sigue siendo
+                                    un misterio.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">En que momentos ronronea un gato</div>
-                                <p>Normalmente un gato ronronea cuando se siente a gusto, pero también, ante un momento de estrés o dolor, puede usar el ronroneo para calmarse a sí mismo. </p>
+                                <p>Normalmente un gato ronronea cuando se siente a gusto, pero también, ante un momento
+                                    de estrés o dolor, puede usar el ronroneo para calmarse a sí mismo. </p>
                             </div>
                         </li>
                     </ul>
@@ -255,26 +317,35 @@
                 <img src="./assets/images/Tips dolittle.png" class="card-img-top"
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">Cómo hacerle usar la caja de arena a tu gato</h4>
-                <img src="./assets/images/Caja-arena-gatos.jpg"
-                    style="height: 15rem; width: 38rem; object-fit: cover;" />
+                <div style="display: flex; justify-content: center;">
+                    <img src="./assets/images/Caja-arena-gatos.jpg"
+                        style="width: 90%; height: 15rem; object-fit: cover;" />
+                    </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">El lugar es muy importante</div>
-                                <p>Debido a su psicología de depredadores, a todos los gatos les gusta tener privacidad en momentos de vulnerabilidad. Asegúrate de que pones la caja de arena en un sitio donde se sienta a salvo.</p>
+                                <p>Debido a su psicología de depredadores, a todos los gatos les gusta tener privacidad
+                                    en momentos de vulnerabilidad. Asegúrate de que pones la caja de arena en un sitio
+                                    donde se sienta a salvo.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Control de olores</div>
-                                <p>¿Sabías que para ellos el olor a productos de limpieza es un olor fatal? Por eso mismo tampoco se recomienda utilizar arena perfumada. Evita usarlos en su caja, ya que solo lograrás hacerles huir.</p>
+                                <p>¿Sabías que para ellos el olor a productos de limpieza es un olor fatal? Por eso
+                                    mismo tampoco se recomienda utilizar arena perfumada. Evita usarlos en su caja, ya
+                                    que solo lograrás hacerles huir.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Prémialo</div>
-                                <p>Lueg de que haga sus necesidades, acércate diciéndole cosas y dale su premio cerca de la caja. Eso hará que asocie lo que acaba de hacer con la recompensa y será más probable que lo haga en el futuro. Puedes premiarlo con mimos, con comida o con juguetes</p>
+                                <p>Lueg de que haga sus necesidades, acércate diciéndole cosas y dale su premio cerca de
+                                    la caja. Eso hará que asocie lo que acaba de hacer con la recompensa y será más
+                                    probable que lo haga en el futuro. Puedes premiarlo con mimos, con comida o con
+                                    juguetes</p>
                             </div>
                         </li>
                     </ul>
@@ -287,41 +358,50 @@
                 <img src="./assets/images/Tips dolittle.png" class="card-img-top"
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">¿Cómo hacer un rascador para gatos?</h4>
-                <img src="./assets/images/rascador-casero-gatos.jpg"
-                    style="height: 15rem; width: 38rem; object-fit: cover;" />
+                <div style="display: flex; justify-content: center;">
+                    <img src="./assets/images/rascador-casero-gatos.jpg"
+                        style="width: 90%; height: 15rem; object-fit: cover;" />
+                    </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Materiales</div>
                                 <p>Un tablero de madera resistente o cartón grueso,
-                                Alfombra de sisal (puede ser una alfombra vieja), tijeras, pegamento resistente o grapadora.
+                                    Alfombra de sisal (puede ser una alfombra vieja), tijeras, pegamento resistente o
+                                    grapadora.
                                 </p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Paso a paso</div>
-                                <p>1- Prepara la base del rascador. Asegúrate de que sea lo suficientemente grande para que tu gato pueda estirarse cómodamente.</p> 
-                                <p>2- Coloca la alfombra de sisal: córtala a la medida necesaria para cubrir completamente la base del rascador.</p> 
-                                <p>3- Fija la alfombra y añade los toques finales: aplica pegamento resistente en el reverso de la alfombra y presiona firmemente sobre la superficie. Si has elegido el cartón, puedes utilizar una grapadora para asegurar la alfombra en su lugar.</p>
+                                <p>1- Prepara la base del rascador. Asegúrate de que sea lo suficientemente grande para
+                                    que tu gato pueda estirarse cómodamente.</p>
+                                <p>2- Coloca la alfombra de sisal: córtala a la medida necesaria para cubrir
+                                    completamente la base del rascador.</p>
+                                <p>3- Fija la alfombra y añade los toques finales: aplica pegamento resistente en el
+                                    reverso de la alfombra y presiona firmemente sobre la superficie. Si has elegido el
+                                    cartón, puedes utilizar una grapadora para asegurar la alfombra en su lugar.</p>
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="ms-2 me-auto">
                                 <div class="fw-bold">Algunas recomendaciones</div>
-                                <p>Colocalo en lugar donde tu gato se sienta seguro. Asegúrate de que el pegamento que usas no tenga un olor muy fuerte o sea peligroso. Mantenlo limpio y libre de polvo.</p>
+                                <p>Colocalo en lugar donde tu gato se sienta seguro. Asegúrate de que el pegamento que
+                                    usas no tenga un olor muy fuerte o sea peligroso. Mantenlo limpio y libre de polvo.
+                                </p>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-       
+
 
     </main>
     <footer>
-        <div class="imag">
+        <div>
             <a class="icon-link" href="#">
                 <svg class="bi" aria-hidden="true">
                     <use xlink:href="#box-seam"></use>
