@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     font-family: 'League Spartan', sans-serif !important;
@@ -21,14 +21,6 @@
 	margin: 0;
 }
 
-h1 {
-    text-align: center;
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 700;
-    color: var(--color4);
-    text-shadow: 2px 2px 4px var(--color5);
-}
-
 .nav-index {
     background-color: var(--color3) !important;
 }
@@ -37,12 +29,6 @@ a:hover {
     color: var(--color4) !important;
     
 }
-.btn-index {
-    border: var(--color4);
-    background-color: var(--color4);
-    color: aliceblue;
-}
-
 .img-footer {
     width: 2rem;
     border-radius: 0.5rem;
@@ -116,10 +102,9 @@ footer {
 
 
 .ctac-titulo {
-	font-family: 'Roboto', sans-serif;
 	text-transform: uppercase;
 	font-size: 2rem;
-	color: var(--color3);
+	color: var(--color4);
 }
 
 .contact .contacto-container form .inputBox {
@@ -205,5 +190,27 @@ footer {
     height: 14rem !important;
     object-fit: contain !important;
 }
+.carrito{
+	background-color: var(--color4);
+	border: solid 2px var(--color4);
+	color: var(--color3);
+}
+.carrito:hover{
+	background-color: transparent;
+	border: solid 2px var(--color4);
+	color: var(--color4);
+}
+.cuerpo-carrito {
+	background-color: rgba(255, 255, 255, 0.733);
+}
+th {
+	color: var(--color4) !important;
+}
+th,td{
+	background-color: #eebe7ed6 !important;
+}
+
+
+
 
 
