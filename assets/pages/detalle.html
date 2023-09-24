@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolittle | Farmacia</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="./assets/estilo/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navFarm">
+            <P>NAV</P>
+        </nav>
+        <header class="headerFarm">
+            <h1>HEADER</h1>
+        </header>
+        <main class="mainDetails">
+            <div class="detPrin" id="contDetail">
+                <img class="imgDetails" v-bind:src="productoDetalle.imagen" v-bind:alt="productoDetalle.producto">
+                <div class="eventDetails">
+                    <h2>{{productoDetalle.producto}}</h2>
+                    <ul>
+                        <li>Nombre: {{productoDetalle.producto}}</li>
+                        <li>Descripcion: {{productoDetalle.descripcion}}</li>
+                        <li>Categoria: {{productoDetalle.categoria}}</li>
+                        <li>Precio: U$D {{productoDetalle.price}}</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/scrips/detalle.js"></script>
+</body>
+
+</html>
