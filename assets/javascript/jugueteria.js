@@ -8,7 +8,7 @@ createApp({
       valueSearch:``,
       filtrados:[],
       carrito:[],
-      cantidades:[],
+      precioTotal:0,
       
     };
   },
@@ -47,15 +47,20 @@ createApp({
           localStorage.setItem("carrito",JSON.stringify(this.carrito))
         }
 
-        this.cantidades.push(1)
-        console.log(this.carrito)
+        this.precioTotal += producto.precio
+        producto.disponibles -= 1
+
       },
 
-      sacarCar(producto){ 
-        console.log(producto)
-        this.carrito = this.carrito.filter( productos => productos != producto)
+      sacarCar(productoA){ 
+        console.log(productoA)
+        // this.carrito = this.carrito.filter( productos => productos._id != producto._id)
+
+        this.carrito = this.carrito.filter( productoB => this.carrito.find(productoC => productoC == productoA))
         localStorage.setItem("carrito",JSON.stringify(this.carrito)) 
-         
+
+        productoA.disponibles += 1
+        this.precioTotal -= productoA.precio
        }
        
 
