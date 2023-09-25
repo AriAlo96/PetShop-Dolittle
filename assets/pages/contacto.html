@@ -18,7 +18,6 @@
 
 
 <body class="body-contacto">
-
 	<div class="layout d-flex flex-column" id="app">
 		<header>
 			<nav class="navbar navbar-expand-lg bg-body-tertiary nav-index">
@@ -51,6 +50,47 @@
 						</ul>
 					</div>
 				</div>
+				<button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
+					<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+				  </svg></button>
+			</nav>
+			<div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasRightLabel">Su carrito!</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<table class="table table-hover table-borderless tabla-carrito">
+							<thead>
+							  <tr>
+								<th scope="col">#</th>
+								<th scope="col">Producto</th>
+								<th scope="col">Cantidad</th>
+								<th scope="col">Total</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<th scope="row">1</th>
+								<td></td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<th scope="row">2</th>
+								<td></td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<th scope="row">3</th>
+								<td colspan="2"></td>
+								<td></td>
+							  </tr>
+							</tbody>
+					  </table>
+				</div>
+			</div>
 			</nav>
 	
 		</header>
@@ -69,32 +109,33 @@
 						<h3 class="ctac-titulo">Ponerse en contacto</h3>
 						<div class="inputBox">
 							<span class="fas fa-user"></span>
-							<input type="text" v-model="nombre" placeholder="nombre">
+							<input type="text" v-model="nombre" placeholder="Nombre">
 						</div>
 
 
 						<div class="inputBox">
 							<span class="fas fa-envelope"></span>
-							<input type="email" v-model="mail" placeholder="email">
-
+							<input type="email" v-model="mail" placeholder="E-mail">
 						</div>
 
 
 						<div class="inputBox">
 							<span class="fas fa-phone"></span>
-							<input type="number" v-model="numero" placeholder="numero">
-
+							<input type="number" v-model="numero" placeholder="Celular/Fijo">
 						</div>
 
 						<div class="inputBox">
 							<span class="fa-solid fa-paw"></span>
-							<input type="text" v-model="mascota" placeholder="que mascota tiene">
-
+							<input type="text" v-model="mascota" placeholder="¿Qué mascota tienes?">
 						</div>
 
 						<div class="inputBox">
+							<span class="fas fa-user"></span>
+							<input type="text" v-model="nombreMascota" placeholder="Nombre de tu mascota">
+						</div>
 
-							<textarea type="text" placeholder="number" class="ctextarea"></textarea>
+						<div class="inputBox">
+							<textarea type="text" placeholder="Dejanos tu mensaje..." class="ctextarea"></textarea>
 
 						</div>
 
@@ -113,7 +154,7 @@
 											aria-label="Close"></button>
 									</div>
 									<div class="modal-body">
-										<p>{{nombre}}</p>
+										<p>"Muchas gracias, {{nombre}}! Recibimos tu consulta y te responderemos lo antes posible! Saludos a tu amigo/a {{nombreMascota}}!"</p>
 									</div>
 									<div class="modal-footer">
 										<!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
@@ -173,7 +214,7 @@
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="./assets/"></script>
+	<script src="../javascript/contacto.js" type="module"></script>
 
 </body>
 
