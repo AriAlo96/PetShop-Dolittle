@@ -96,14 +96,13 @@
                             <!-- total -->
                             <tr>
                                 <th scope="row" colspan="2">total</th>
-                                <td>$ {{precioIndividual}}</td>
+                                <td>$ {{precioTotal}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
-                style="height: 20rem;">
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="../images/Banner1.png" class="d-block w-100 img-banner" alt="">
@@ -129,7 +128,8 @@
         </header>
         <main class="mainFarm">
             <div class="d-flex flex-row-reverse">
-                <input class="inptSearch" type="search" placeholder="Buscar artículos..." v-model="valueSearch" @keyup="filtroSearch" class="w-25">
+                <input class="inptSearch" type="search" placeholder="Buscar artículos..." v-model="valueSearch"
+                    @keyup="filtroSearch" class="w-25">
             </div>
             <div class="contPrin">
                 <div v-if="filtrados.length > 0" v-for="producto of filtrados" class="card" style="width: 18rem;">
@@ -142,7 +142,7 @@
                         </div>
                         <div class="d-flex justify-content-center gap-4">
                             <a v-bind:href=`./detalle.html?parametro=${producto._id}` class="botonDetalle">Detalles</a>
-                            <button class="botonCarrito" @click="addCar(producto)">Agregar al carrito</button>
+                            <button v-if="producto.disponibles > 0" class="botonCarrito" @click="addCar(producto)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>

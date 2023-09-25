@@ -8,6 +8,7 @@ createApp({
       valueSearch:``,
       filtrados:[],
       carrito:[],
+      stock:0,
       precioTotal:0,
     };
   },
@@ -28,6 +29,16 @@ createApp({
 
         JSON.stringify(this.carrito);
         console.log(this.carrito);
+
+        for (producto of this.carrito) {
+          console.log(producto);
+          this.precioTotal += producto.precio;
+        }
+
+        for (producto of this.carrito) {
+          console.log(producto);
+          this.precioIndividual += producto.precio;
+        }
       })
       .catch((err) => console.log(err));
   },
@@ -42,22 +53,20 @@ createApp({
           this.carrito.push(producto)
           localStorage.setItem("carrito",JSON.stringify(this.carrito))
         }
-
-        this.precioTotal += producto.precio
-        producto.disponibles -= 1
-
+        producto.disponibles -= 1;
+        this.precioTotal += producto.precio;
+        producto.disponibles;
       },
 
-      sacarCar(productoA){ 
-        console.log(productoA)
-        // this.carrito = this.carrito.filter( productos => productos._id != producto._id)
-
-        this.carrito = this.carrito.filter( productoB => this.carrito.find(productoC => productoC == productoA))
-        localStorage.setItem("carrito",JSON.stringify(this.carrito)) 
-
-        productoA.disponibles += 1
-        this.precioTotal -= productoA.precio
-       }
+      sacarCar(producto) {
+        console.log(producto);
+        let indice = this.carrito.findIndex(productoCarrito => productoCarrito._id == producto._id)
+        this.carrito.splice(indice, 1)
+        
+        localStorage.setItem("carrito", JSON.stringify(this.carrito));
+        producto.disponibles += 1
+        this.precioTotal-=producto.precio
+      },
        
   },
 }).mount("#app");

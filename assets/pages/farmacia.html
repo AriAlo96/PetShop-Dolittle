@@ -102,8 +102,7 @@
                     </table>
                 </div>
             </div>
-            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
-                style="height: 20rem;">
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="../images/Banner1.png" class="d-block w-100 img-banner" alt="">
@@ -139,7 +138,7 @@
                         <h5 class="card-title">{{producto.producto}}</h5>
                         <div class="d-flex justify-content-around w-100">
                             <p class="price">${{producto.precio}}</p>
-                            <p  class="cantidadStock">Stock:{{producto.disponibles}}</p>
+                            
                         </div>
                         <div class="d-flex justify-content-center gap-4">
                             <a v-bind:href=`./detalle.html?parametro=${producto._id}` class="botonDetalle">Detalles</a>
