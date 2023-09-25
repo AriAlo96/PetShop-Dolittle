@@ -7,6 +7,10 @@ createApp({
       productoDetalle:{},
     };
   },
+  mounted(){
+    this.carrito = JSON.parse(localStorage.getItem("carrito")) || []
+  },
+  
   created() {
     fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
       .then((respuesta) => respuesta.json())
@@ -23,5 +27,15 @@ createApp({
       })
       .catch((err) => console.log(err));
   },
-  methods: {},
+  methods: {
+    addCar(producto){
+      if(!this.carrito.includes(producto._id) ){
+        this.carrito.push(producto._id)
+        localStorage.setItem("carrito",JSON.stringify(this.carrito))
+      }
+      console.log(this.carrito)
+    },
+  },
+ 
 }).mount("#app");
+
