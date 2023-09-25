@@ -16,8 +16,8 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e6cda8 !important;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../../inicio.html"><img src="../images/Logo Dolittle.png" alt="Bootstrap"
-                            height="80"></a>
+                    <a class="navbar-brand" href="../../inicio.html"><img src="../images/Logo Dolittle.png"
+                            alt="Bootstrap" height="80"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -32,8 +32,8 @@
                                 <a class="nav-link" href="../pages/contacto.html">Contacto</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="../pages/farmacia.html" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="../pages/farmacia.html" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Tiendas
                                 </a>
                                 <ul class="dropdown-menu">
@@ -43,47 +43,52 @@
                             </li>
                         </ul>
                     </div>
-              </div>
-              <button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                  </svg></button>
+                </div>
+                <button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg></button>
             </nav>
-            <div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasRightLabel">Su carrito!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <table class="table table-hover table-borderless tabla-carrito">
-                            <thead>
-                              <tr>
+                        <thead>
+                            <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Producto</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Total</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                                 <th scope="row">1</th>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                              </tr>
-                              <tr>
+                            </tr>
+                            <tr>
                                 <th scope="row">2</th>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                              </tr>
-                              <!-- total -->
-                              <tr>
+                            </tr>
+                            <!-- total -->
+                            <tr>
                                 <th scope="row">total</th>
                                 <td colspan="2"></td>
                                 <td></td>
-                              </tr>
-                            </tbody>
-                      </table>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </header>
@@ -93,11 +98,11 @@
                 <div class="productDetails">
                     <h2>{{productoDetalle.producto}}</h2>
                     <h5>Categoria: {{productoDetalle.categoria}}</h5>
-                    <p>{{productoDetalle.descripcion}}</p>                       
+                    <p>{{productoDetalle.descripcion}}</p>
                     <h3>${{productoDetalle.precio}}</h3>
                     <div class="d-flex justify-content-start">
                         <button class="btn btn-secondary" @click="addCar(productos)">agregar al carrito</button>
-                     </div>
+                    </div>
                 </div>
             </div>
         </main>
