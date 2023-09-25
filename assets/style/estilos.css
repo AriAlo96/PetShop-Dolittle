@@ -6,7 +6,7 @@
 }
 
 :root {
-    --color1: #0fc4e8;
+    --color1: #0fc4e8;	
     --color2: #0195be;
     --color3: #e6cda8;
     --color4: #f07e13;
@@ -200,9 +200,20 @@ footer {
 	border: solid 2px var(--color4) !important;;
 	color: var(--color4) !important;;
 }
+
+
 .cuerpo-carrito {
-	background-color: rgba(255, 255, 255, 0.733) !important;;
+	background-color: rgba(255, 255, 255, 0.733) !important;
 }
+
+
+.carrito-producto-img{
+	object-fit: contain;
+	width: 6rem;
+	height: 5rem;
+	border-radius: 10px;
+}
+
 th {
 	color: var(--color4) !important;
 }
@@ -210,7 +221,13 @@ th,td{
 	background-color: #eebe7ed6 !important;
 }
 
+#clean-car{
+	font-size: 2.5rem;
+}
 
+.tabla-cantidad{
+	font-size: .9rem;
+}
 
 
 

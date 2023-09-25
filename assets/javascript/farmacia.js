@@ -7,16 +7,11 @@ createApp({
       prodFarm: [],
       valueSearch:``,
       filtrados:[],
+      carrito:[]
     };
   },
 
-  mounted(){
-    this.carrito = JSON.parse(localStorage.getItem("carrito")) || []
-      // if(carrito){
-      //   this.carrito = carrito
-      // }
 
-  },
   created() {
     fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
       .then((respuesta) => respuesta.json())
@@ -28,6 +23,13 @@ createApp({
         this.filtrados = this.prodFarm
         console.log(this.productos);
         console.log(this.prodFarm);
+
+        this.carrito = JSON.parse(localStorage.getItem("carrito")) || []
+        console.log(this.carrito)
+
+       JSON.stringify(this.carrito)
+       console.log(this.carrito)
+
       })
       .catch((err) => console.log(err));
   },
@@ -39,16 +41,17 @@ createApp({
 
       addCar(producto){
         if(!this.carrito.includes(producto._id) ){
-          this.carrito.push(producto._id)
+          this.carrito.push(producto)
           localStorage.setItem("carrito",JSON.stringify(this.carrito))
         }
         console.log(this.carrito)
       },
 
       sacarCar(producto){ 
-        this.carrito = this.carrito.filter( productos => productos != producto._id)
+        console.log(producto)
+        this.carrito = this.carrito.filter( productos => productos != producto)
         localStorage.setItem("carrito",JSON.stringify(this.carrito)) 
-         console.log(this.carrito)
+         
        }
   },
 }).mount("#app");
