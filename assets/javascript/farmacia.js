@@ -5,14 +5,12 @@ createApp({
     return {
       productos: [],
       prodFarm: [],
-      valueSearch:``,
-      filtrados:[],
-      carrito:[],
-      precioIndividual:0,
-  
+      valueSearch: ``,
+      filtrados: [],
+      carrito: [],
+      precioIndividual: 0,
     };
   },
-
 
   created() {
     fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
@@ -22,49 +20,43 @@ createApp({
         this.prodFarm = this.productos.filter(
           (producto) => producto.categoria == "farmacia"
         );
-        this.filtrados = this.prodFarm
+        this.filtrados = this.prodFarm;
         console.log(this.productos);
         console.log(this.prodFarm);
 
-        this.carrito = JSON.parse(localStorage.getItem("carrito")) || []
-        console.log(this.carrito)
+        this.carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        console.log(this.carrito);
 
-       JSON.stringify(this.carrito)
-       console.log(this.carrito)
+        JSON.stringify(this.carrito);
+        console.log(this.carrito);
 
-      for (producto of this.carrito){
-        console.log (producto)
-        this.precioIndividual += producto.precio
-
-      }
-
-      console.log(this.precioIndividual)
-
+        for (producto of this.carrito) {
+          console.log(producto);
+          this.precioIndividual += producto.precio;
+        }
+        console.log(this.precioIndividual);
       })
       .catch((err) => console.log(err));
-
-
   },
   methods: {
     filtroSearch() {
-      this.filtrados = this.prodFarm.filter(producto =>
+      this.filtrados = this.prodFarm.filter((producto) =>
         producto.producto.toLowerCase().includes(this.valueSearch.toLowerCase())
-      )},
+      );
+    },
 
-      addCar(producto){
-        if(!this.carrito.includes(producto._id) ){
-          this.carrito.push(producto)
-          localStorage.setItem("carrito",JSON.stringify(this.carrito))
-        }
-        console.log(this.carrito)
-      },
+    addCar(producto) {
+      if (!this.carrito.includes(producto._id)) {
+        this.carrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(this.carrito));
+      }
+      console.log(this.carrito);
+    },
 
-      sacarCar(producto){ 
-        console.log(producto)
-        this.carrito = this.carrito.filter( productos => productos != producto)
-        localStorage.setItem("carrito",JSON.stringify(this.carrito)) 
-         
-       }
+    sacarCar(producto) {
+      console.log(producto);
+      this.carrito = this.carrito.filter((productos) => productos != producto);
+      localStorage.setItem("carrito", JSON.stringify(this.carrito));
+    },
   },
 }).mount("#app");
-
