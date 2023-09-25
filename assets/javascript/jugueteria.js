@@ -9,7 +9,6 @@ createApp({
       filtrados:[],
       carrito:[],
       precioTotal:0,
-      
     };
   },
   created() {
@@ -20,24 +19,21 @@ createApp({
         this.prodJug = this.productos.filter(
           (producto) => producto.categoria === "jugueteria"
         );
-        this.filtrados = this.prodJug
+        this.filtrados = this.prodJug;
         console.log(this.productos);
         console.log(this.prodJug);
 
-        
-        this.carrito = JSON.parse(localStorage.getItem("carrito")) || []
-        console.log(this.carrito)
+        this.carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        console.log(this.carrito);
 
-       JSON.stringify(this.carrito)
-       console.log(this.carrito)
-
-       
+        JSON.stringify(this.carrito);
+        console.log(this.carrito);
       })
       .catch((err) => console.log(err));
   },
   methods: {
     filtroSearch() {
-      this.filtrados = this.prodJug.filter(producto =>
+      this.filtrados = this.prodJug.filter((producto) =>
         producto.producto.toLowerCase().includes(this.valueSearch.toLowerCase())
       )},
 
@@ -63,6 +59,5 @@ createApp({
         this.precioTotal -= productoA.precio
        }
        
-
   },
 }).mount("#app");

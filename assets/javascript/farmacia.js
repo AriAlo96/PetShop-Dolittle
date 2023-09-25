@@ -10,10 +10,9 @@ createApp({
       carrito:[],
       stock:0,
       precioTotal:0,
-  
+ 
     };
   },
-
 
   created() {
     fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
@@ -23,7 +22,7 @@ createApp({
         this.prodFarm = this.productos.filter(
           (producto) => producto.categoria == "farmacia"
         );
-        this.filtrados = this.prodFarm
+        this.filtrados = this.prodFarm;
         console.log(this.productos);
         console.log(this.prodFarm);
 
@@ -47,14 +46,18 @@ createApp({
 
       console.log(this.precioTotal)
 
+
+        for (producto of this.carrito) {
+          console.log(producto);
+          this.precioIndividual += producto.precio;
+        }
+        console.log(this.precioIndividual);
       })
       .catch((err) => console.log(err));
-
-
   },
   methods:{
     filtroSearch() {
-      this.filtrados = this.prodFarm.filter(producto =>
+      this.filtrados = this.prodFarm.filter((producto) =>
         producto.producto.toLowerCase().includes(this.valueSearch.toLowerCase())
       )},
 
@@ -85,4 +88,3 @@ createApp({
        }
   },
 }).mount("#app");
-
