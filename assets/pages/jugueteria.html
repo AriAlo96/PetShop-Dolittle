@@ -7,6 +7,9 @@
     <title>Dolittle | Jugueteria</title>
     <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/estilos.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -59,33 +62,41 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <table class="table table-hover table-borderless tabla-carrito">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Producto</th>
+                     <table class="table table-hover table-borderless tabla-carrito">
+                            <thead>
+                              <tr >
+                                <th scope="col" colspan="2" class="text-center">Productos</th>
                                 <th scope="col">Cantidad</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <!-- total -->
-                            <tr>
-                                <th scope="row">total</th>
-                                <td colspan="2"></td>
-                                <td></td>
+                                <th scope="col"></th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr v-for="item of carrito">
+                                <th scope="row"> <img class="carrito-producto-img" :src="item.imagen" alt=""></th>
+                                <td>
+                                    <div>
+                                        <p>{{item.producto}}</p>
+                                        <p>{{item.categoria}}</p>
+                                    </div>
+                                 </td>
+                                 
+                                 <td>
+                                    <div>
+                                        
+                                        <!-- <p><i class="bi bi-plus-lg tabla-cantidad" id="agregar"> </i> 1 <i class="bi bi-dash tabla-cantidad" id="sacar"></i> </p> -->
+                                        <p >$ {{item.precio}}</p>
+                                       
+                                    </div>
+                                </td>
+                                 
+
+                                <td><i class="bi bi-x" id="clean-car" @click="sacarCar(item)"></i></td>
+                              </tr>
+                              <!-- total -->
+                              <tr>
+                                <th scope="row" colspan="2">total</th>
+                                <td>$ {{precioIndividual}}</td>
                             </tr>
                         </tbody>
                     </table>

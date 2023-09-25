@@ -6,11 +6,11 @@
 }
 
 :root {
-	--color1: #0fc4e8;
-	--color2: #0195be;
-	--color3: #e6cda8;
-	--color4: #f07e13;
-	--color5: #481800;
+    --color1: #0fc4e8;	
+    --color2: #0195be;
+    --color3: #e6cda8;
+    --color4: #f07e13;
+    --color5: #481800;
 }
 
 .body-inicio {
@@ -187,6 +187,13 @@ footer {
 	;
 }
 
+.carrito-producto-img{
+	object-fit: contain;
+	width: 6rem;
+	height: 5rem;
+	border-radius: 10px;
+}
+
 .carrito:hover {
 	background-color: transparent !important;
 	;
@@ -208,6 +215,15 @@ th {
 th,
 td {
 	background-color: #eebe7ed6 !important;
+}
+
+
+#clean-car{
+	font-size: 2.5rem;
+}
+
+.tabla-cantidad{
+	font-size: .9rem;
 }
 
 .mainFarm {
