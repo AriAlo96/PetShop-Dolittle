@@ -75,13 +75,23 @@
                                         <p>{{item.categoria}}</p>
                                     </div>
                                  </td>
-                                <td><p><i class="bi bi-plus-lg tabla-cantidad" id="agregar"> </i> 1 <i class="bi bi-dash tabla-cantidad" id="sacar"></i> </p></td>
+                                 
+                                 <td>
+                                    <div>
+                                        
+                                        <!-- <p><i class="bi bi-plus-lg tabla-cantidad" id="agregar"> </i> 1 <i class="bi bi-dash tabla-cantidad" id="sacar"></i> </p> -->
+                                        <p >$ {{item.precio}}</p>
+                                       
+                                    </div>
+                                </td>
+                                 
+
                                 <td><i class="bi bi-x" id="clean-car" @click="sacarCar(item)"></i></td>
                               </tr>
                               <!-- total -->
                               <tr>
-                                <th scope="row">total</th>
-                                <td colspan="2"></td>
+                                <th scope="row" colspan="2">total</th>
+                                <td>$ {{precioIndividual}}</td>
                                 <td></td>
                               </tr>
                             </tbody>
@@ -125,6 +135,7 @@
                         <h5 class="card-title">{{producto.producto}}</h5>
                         <div class="priceDetails d-flex justify-content-around align-items-center">
                             <p class="price">Precio: ${{producto.precio}}</p>
+                
                             <a v-bind:href=`./detalle.html?parametro=${producto._id}`
                                 class="btn btn-primary">Detalles</a>
                         </div>

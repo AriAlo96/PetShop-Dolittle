@@ -8,6 +8,8 @@ createApp({
       valueSearch:``,
       filtrados:[],
       carrito:[],
+      cantidades:[],
+      
     };
   },
   created() {
@@ -44,6 +46,8 @@ createApp({
           this.carrito.push(producto)
           localStorage.setItem("carrito",JSON.stringify(this.carrito))
         }
+
+        this.cantidades.push(1)
         console.log(this.carrito)
       },
 
@@ -54,5 +58,6 @@ createApp({
          
        }
        
+
   },
 }).mount("#app");

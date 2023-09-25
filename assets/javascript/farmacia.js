@@ -7,7 +7,9 @@ createApp({
       prodFarm: [],
       valueSearch:``,
       filtrados:[],
-      carrito:[]
+      carrito:[],
+      precioIndividual:0,
+  
     };
   },
 
@@ -30,8 +32,18 @@ createApp({
        JSON.stringify(this.carrito)
        console.log(this.carrito)
 
+      for (producto of this.carrito){
+        console.log (producto)
+        this.precioIndividual += producto.precio
+
+      }
+
+      console.log(this.precioIndividual)
+
       })
       .catch((err) => console.log(err));
+
+
   },
   methods: {
     filtroSearch() {
