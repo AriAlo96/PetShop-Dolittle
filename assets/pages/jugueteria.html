@@ -118,7 +118,7 @@
             </div>
             <div class="contPrin">
                 <div v-if="filtrados.length > 0" v-for="producto of filtrados" class="card" style="width: 18rem;">
-                    <img v-bind:src="producto.imagen" class="card-img-top" v-bind:alt="producto.producto">
+                    <img v-bind:src="producto.imagen" class="card-img-top img-card-me" v-bind:alt="producto.producto">
                     <div class="card-body d-felx flex-column justify-content-center">
                         <h5 class="card-title">{{producto.producto}}</h5>
                         <div class="priceDetails d-flex justify-content-around align-items-center">
