@@ -179,7 +179,7 @@ footer {
 }
 
 .imgDetails {
-	height: 50vh;
+	height: 40vh;
 	padding: 1rem;
 }
 
@@ -187,6 +187,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	margin: 1rem;
+	min-height: 67vh;
 }
 
 .img-card-me {
@@ -277,6 +278,7 @@ td {
 	height: 2rem;
 	border: solid 2px var(--color4);
 	padding: 0.5rem;
+	outline: none;
 }
 
 .cantidadStock {
@@ -334,4 +336,10 @@ transform: scale(1.1);
 
 .botonCarrito:hover{
 	transform: scale(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+	.card{
+		width: 70vw	!important;
+	}
 }

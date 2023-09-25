@@ -49,48 +49,9 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg></button>
+
         </nav>
-        <div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Su carrito!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <table class="table table-hover table-borderless tabla-carrito">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Producto</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Total</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <!-- total -->
-                          <tr>
-                            <th scope="row">total</th>
-                            <td colspan="2"></td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                  </table>
-            </div>
-        </div>
+
     </header>
     <main>
         <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -116,12 +77,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div  style="display: flex; align-items: center; margin: 1rem;">
+        <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; margin: 1rem;">
             <div class="card mb-3" style="max-width: 800px; margin: 1rem;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="./assets/images/Amigos-mascotas.jpg" class="img-fluid rounded-start" alt="..."
-                            style= "width: 100%; object-fit: cover;">
+                            style="width: 100%; object-fit: cover;">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -134,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card" style="margin: 1rem;">
+            <div class="card" style="margin: 1rem; width: 30vw;">
                 <div class="card-header">
                     Cita
                 </div>
@@ -157,8 +118,8 @@
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">Cómo acostumbrar a tu perro a quedarse solo en casa</h4>
                 <div style="display: flex; justify-content: center;">
-                <img src="./assets/images/Dejar-al-perro-solo-en-casa.jpg"
-                    style="width: 90%; height: 15rem; object-fit: cover;" />
+                    <img src="./assets/images/Dejar-al-perro-solo-en-casa.jpg"
+                        style="width: 90%; height: 15rem; object-fit: cover;" />
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -197,7 +158,7 @@
                 <div style="display: flex; justify-content: center;">
                     <img src="./assets/images/perros-comiendo.jpg"
                         style="width: 90%; height: 15rem; object-fit: cover;" />
-                    </div>
+                </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -237,9 +198,8 @@
                     style="height: 6rem; object-fit: contain;" alt="...">
                 <h4 class="card-title">Cuáles son las frutas que puede comer tu perro</h4>
                 <div style="display: flex; justify-content: center;">
-                    <img src="./assets/images/perro-fruta.jpeg"
-                        style="width: 90%; height: 15rem; object-fit: cover;" />
-                    </div>
+                    <img src="./assets/images/perro-fruta.jpeg" style="width: 90%; height: 15rem; object-fit: cover;" />
+                </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -281,7 +241,7 @@
                 <div style="display: flex; justify-content: center;">
                     <img src="./assets/images/gato-ronroneando.jpeg"
                         style="width: 90%; height: 15rem; object-fit: cover;" />
-                    </div>
+                </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -321,7 +281,7 @@
                 <div style="display: flex; justify-content: center;">
                     <img src="./assets/images/Caja-arena-gatos.jpg"
                         style="width: 90%; height: 15rem; object-fit: cover;" />
-                    </div>
+                </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -362,7 +322,7 @@
                 <div style="display: flex; justify-content: center;">
                     <img src="./assets/images/rascador-casero-gatos.jpg"
                         style="width: 90%; height: 15rem; object-fit: cover;" />
-                    </div>
+                </div>
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-start">

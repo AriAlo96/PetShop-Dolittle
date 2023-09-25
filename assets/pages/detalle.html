@@ -11,7 +11,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="min-height: 100vh;">
     <div id="app" v-cloak>
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e6cda8 !important;">
@@ -92,17 +92,15 @@
                 </div>
             </div>
         </header>
-        <main class="mainDetails">
-            <div class="detPrin" id="contDetail">
+        <main class="mainDetails flex-grow-1">
+            <div class="detPrin d-flex flex-wrap" id="contDetail">
                 <img class="imgDetails" v-bind:src="productoDetalle.imagen" v-bind:alt="productoDetalle.producto">
                 <div class="productDetails">
                     <h2>{{productoDetalle.producto}}</h2>
                     <h5>Categoria: {{productoDetalle.categoria}}</h5>
                     <p>{{productoDetalle.descripcion}}</p>
                     <h3>${{productoDetalle.precio}}</h3>
-                    <div class="d-flex justify-content-start">
-                        <button class="btn btn-secondary" @click="addCar(productos)">agregar al carrito</button>
-                    </div>
+
                 </div>
             </div>
         </main>
