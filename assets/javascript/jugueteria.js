@@ -5,10 +5,10 @@ createApp({
     return {
       productos: [],
       prodJug: [],
-      valueSearch: ``,
-      filtrados: [],
-      carrito: [],
-      cantidades: [],
+      valueSearch:``,
+      filtrados:[],
+      carrito:[],
+      precioTotal:0,
     };
   },
   created() {
@@ -35,23 +35,29 @@ createApp({
     filtroSearch() {
       this.filtrados = this.prodJug.filter((producto) =>
         producto.producto.toLowerCase().includes(this.valueSearch.toLowerCase())
-      );
-    },
+      )},
 
-    addCar(producto) {
-      if (!this.carrito.includes(producto._id)) {
-        this.carrito.push(producto);
-        localStorage.setItem("carrito", JSON.stringify(this.carrito));
-      }
+      addCar(producto){
+        if(!this.carrito.includes(producto._id) ){
+          this.carrito.push(producto)
+          localStorage.setItem("carrito",JSON.stringify(this.carrito))
+        }
 
-      this.cantidades.push(1);
-      console.log(this.carrito);
-    },
+        this.precioTotal += producto.precio
+        producto.disponibles -= 1
 
-    sacarCar(producto) {
-      console.log(producto);
-      this.carrito = this.carrito.filter((productos) => productos != producto);
-      localStorage.setItem("carrito", JSON.stringify(this.carrito));
-    },
+      },
+
+      sacarCar(productoA){ 
+        console.log(productoA)
+        // this.carrito = this.carrito.filter( productos => productos._id != producto._id)
+
+        this.carrito = this.carrito.filter( productoB => this.carrito.find(productoC => productoC == productoA))
+        localStorage.setItem("carrito",JSON.stringify(this.carrito)) 
+
+        productoA.disponibles += 1
+        this.precioTotal -= productoA.precio
+       }
+       
   },
 }).mount("#app");

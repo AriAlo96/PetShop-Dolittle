@@ -96,7 +96,7 @@
                             <!-- total -->
                             <tr>
                                 <th scope="row" colspan="2">total</th>
-                                <td>$ {{precioIndividual}}</td>
+                                <td>$ {{precioTotal}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -139,10 +139,11 @@
                         <h5 class="card-title">{{producto.producto}}</h5>
                         <div class="d-flex justify-content-around w-100">
                             <p class="price">${{producto.precio}}</p>
+                            <p  class="cantidadStock">Stock:{{producto.disponibles}}</p>
                         </div>
                         <div class="d-flex justify-content-center gap-4">
                             <a v-bind:href=`./detalle.html?parametro=${producto._id}` class="botonDetalle">Detalles</a>
-                            <button class="botonCarrito" @click="addCar(producto)">Agregar al carrito</button>
+                            <button v-if="producto.disponibles > 0" class="botonCarrito" @click="addCar(producto)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
