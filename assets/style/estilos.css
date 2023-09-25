@@ -14,7 +14,7 @@
 }
 
 .body-inicio {
-    background-color: var(--color3);
+    background-color: var(--color3) !important;
 }
 
 .body-contacto {
@@ -191,17 +191,17 @@ footer {
     object-fit: contain !important;
 }
 .carrito{
-	background-color: var(--color4);
-	border: solid 2px var(--color4);
-	color: var(--color3);
+	background-color: var(--color4)!important;
+	border: solid 2px var(--color4)!important;;
+	color: var(--color3)!important;;
 }
 .carrito:hover{
-	background-color: transparent;
-	border: solid 2px var(--color4);
-	color: var(--color4);
+	background-color: transparent !important;;
+	border: solid 2px var(--color4) !important;;
+	color: var(--color4) !important;;
 }
 .cuerpo-carrito {
-	background-color: rgba(255, 255, 255, 0.733);
+	background-color: rgba(255, 255, 255, 0.733) !important;;
 }
 th {
 	color: var(--color4) !important;
