@@ -7,6 +7,9 @@
     <title>Dolittle | Jugueteria</title>
     <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/estilos.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -32,8 +35,8 @@
                                 <a class="nav-link" href="../pages/contacto.html">Contacto</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="../pages/farmacia.html" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="../pages/farmacia.html" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Tiendas
                                 </a>
                                 <ul class="dropdown-menu">
@@ -43,88 +46,103 @@
                             </li>
                         </ul>
                     </div>
-              </div>
-              <button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                  </svg></button>
+                </div>
+                <button class="btn btn-primary carrito" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="margin-right: 1rem;"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-cart imagen-carrito" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg></button>
             </nav>
-            <div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas offcanvas-end cuerpo-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasRightLabel">Su carrito!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <table class="table table-hover table-borderless tabla-carrito">
+                     <table class="table table-hover table-borderless tabla-carrito">
                             <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Producto</th>
+                              <tr >
+                                <th scope="col" colspan="2" class="text-center">Productos</th>
                                 <th scope="col">Cantidad</th>
-                                <th scope="col">Total</th>
+                                <th scope="col"></th>
+                                
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                              <tr v-for="item of carrito">
+                                <th scope="row"> <img class="carrito-producto-img" :src="item.imagen" alt=""></th>
+                                <td>
+                                    <div>
+                                        <p>{{item.producto}}</p>
+                                        <p>{{item.categoria}}</p>
+                                    </div>
+                                 </td>
+                                 
+                                 <td>
+                                    <div>
+                                        
+                                        <!-- <p><i class="bi bi-plus-lg tabla-cantidad" id="agregar"> </i> 1 <i class="bi bi-dash tabla-cantidad" id="sacar"></i> </p> -->
+                                        <p >$ {{item.precio}}</p>
+                                       
+                                    </div>
+                                </td>
+                                 
+
+                                <td><i class="bi bi-x" id="clean-car" @click="sacarCar(item)"></i></td>
                               </tr>
                               <!-- total -->
                               <tr>
-                                <th scope="row">total</th>
-                                <td colspan="2"></td>
-                                <td></td>
-                              </tr>
-                            </tbody>
-                      </table>
+                                <th scope="row" colspan="2">total</th>
+                                <td>$ {{precioIndividual}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                style="height: 20rem;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../images/Banner1.png" class="d-block w-100 img-banner" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/Banner2.png" class="d-block w-100 img-banner" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/Banner3.png" class="d-block w-100 img-banner" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </header>
-        <main>
-            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
-            style="height: 20rem;">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="../images/Banner1.png" class="d-block w-100 img-banner" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img src="../images/Banner2.png" class="d-block w-100 img-banner" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img src="../images/Banner3.png" class="d-block w-100 img-banner" alt="">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-            <div >
-                <input type="search" placeholder="Search" v-model="valueSearch"
-                    @keyup="filtroSearch">
+        <main class="mainFarm">
+            <div class="inptSearch d-flex flex-row-reverse">
+                <input type="search" placeholder="Busqueda" v-model="valueSearch" @keyup="filtroSearch" class="w-25">
             </div>
             <div class="contPrin">
                 <div v-if="filtrados.length > 0" v-for="producto of filtrados" class="card" style="width: 18rem;">
-                    <img v-bind:src="producto.imagen" class="card-img-top" v-bind:alt="producto.producto">
-                    <div class="card-body d-felx flex-column justify-content-center">
+                    <img v-bind:src="producto.imagen" class="card-img-top img-card-me" v-bind:alt="producto.producto">
+                    <div class="card-body tituloDetalle">
                         <h5 class="card-title">{{producto.producto}}</h5>
-                        <div class="priceDetails d-flex justify-content-around align-items-center">
-                            <p class="price">Precio: $ {{producto.precio}}</p>
-                            <a v-bind:href="`./detalle.html?parametro=${producto._id}`"
-                                class="btn btn-primary">Detalles</a>
+                        <div class="d-flex justify-content-around w-100">
+                            <p class="price">${{producto.precio}}</p>
+                            <p class="cantidadStock">Stock:{{producto.disponibles}}</p>
+                        </div>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a v-bind:href=`./detalle.html?parametro=${producto._id}` class="botonDetalle">Detalles</a>
+                            <button class="botonCarrito" @click="addCar(producto)">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
