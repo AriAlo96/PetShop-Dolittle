@@ -85,7 +85,7 @@
                                     <div>
 
                                         <!-- <p><i class="bi bi-plus-lg tabla-cantidad" id="agregar"> </i> 1 <i class="bi bi-dash tabla-cantidad" id="sacar"></i> </p> -->
-                                        <p>$ {{item.precio}}</p>
+                                        <p>$ {{formatNumber(item.precio)}}</p>
 
                                     </div>
                                 </td>
@@ -96,7 +96,7 @@
                             <!-- total -->
                             <tr>
                                 <th scope="row" colspan="2">total</th>
-                                <td>$ {{precioTotal}}</td>
+                                <td>$ {{formatNumber(precioTotal)}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -138,7 +138,7 @@
                     <div class="card-body tituloDetalle">
                         <h5 class="card-title">{{producto.producto}}</h5>
                         <div class="d-flex justify-content-around w-100">
-                            <p class="price">${{producto.precio}}</p>
+                            <p class="price">${{formatNumber(producto.precio)}}</p>
                         </div>
                         <div class="d-flex justify-content-center gap-4">
                             <a v-bind:href=`./detalle.html?parametro=${producto._id}` class="botonDetalle">Detalles</a>
