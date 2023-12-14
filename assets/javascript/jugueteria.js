@@ -14,16 +14,10 @@ createApp({
   },
   created() {
     fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
+    // fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
+
       .then((respuesta) => respuesta.json())
       .then((info) => {
-        this.productos = info;
-        this.prodJug = this.productos.filter(
-          (producto) => producto.categoria === "jugueteria"
-        );
-        this.filtrados = this.prodJug;
-        console.log(this.productos);
-        console.log(this.prodJug);
-
         this.carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         console.log(this.carrito);
 
@@ -39,6 +33,22 @@ createApp({
           console.log(producto);
           this.precioIndividual += producto.precio;
         }
+
+        for (item of this.carrito){
+          let aux =  info.find(product => product._id == item._id)
+          aux.disponibles -= 1;
+       }
+
+
+        this.productos = info;
+        this.prodJug = this.productos.filter(
+          (producto) => producto.categoria === "jugueteria"
+        );
+        this.filtrados = this.prodJug;
+        console.log(this.productos);
+        console.log(this.prodJug);
+
+        
       })
       .catch((err) => console.log(err));
   },
@@ -67,6 +77,13 @@ createApp({
         producto.disponibles += 1
         this.precioTotal-=producto.precio
       },
+
+      formatNumber(number) {
+        return number.toLocaleString("De-DE", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+    }
        
   },
 }).mount("#app");
